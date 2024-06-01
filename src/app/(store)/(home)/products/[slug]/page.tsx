@@ -27,14 +27,14 @@ export const generateMetadata = async ({
   }
 }
 
-/* export const generateStaticParams = async () => {
+export const generateStaticParams = async () => {
   const response = await api('/products/featured')
   const products: Product[] = await response.json()
 
   return products.map((product) => ({
     slug: product.slug,
   })) 
-} */
+}
 
 const ProductInfo = async ({ params }: { params: { slug: string } }) => {
   const product = await getSlugProduct(params.slug)

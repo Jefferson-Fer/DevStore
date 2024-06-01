@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import CartWidget from './cart-widget'
 import SearchForm from './search-form'
+import { Suspense } from 'react'
 
 const Header = () => {
   return (
@@ -11,7 +12,10 @@ const Header = () => {
         <Link href="/" className="text-2xl font-extrabold text-white">
           devstore
         </Link>
-        <SearchForm />
+        <Suspense fallback={null}>
+          <SearchForm />
+        </Suspense>
+        
       </div>
       <div className="flex items-center gap-4">
         <CartWidget />
